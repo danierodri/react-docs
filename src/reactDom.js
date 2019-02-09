@@ -59,5 +59,6 @@ class WelcomeComponent extends React.PureComponent {
     return <h1>Hello, {name}</h1>;
   }
 }
+
 const element6 = <WelcomeComponent name="Element 6" />;
 ReactDOM.render(element6, getOrCreateDiv('element6'));
