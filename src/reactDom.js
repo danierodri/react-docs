@@ -1,19 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const createDiv = id => {
-  const root = document.createElement('div');
-  root.setAttribute('id', id);
-  document.body.appendChild(root);
-
-  return root;
-};
-
-const getOrCreateDiv = id => {
-  const div = document.getElementById(id);
-
-  return div || createDiv(id);
-};
+import { getOrCreateDiv } from './utils';
 
 const helloWorld = <h1>Hello, world!</h1>;
 ReactDOM.render(helloWorld, getOrCreateDiv('element1'));
@@ -63,4 +50,12 @@ class WelcomeComponent extends React.PureComponent {
 const element6 = <WelcomeComponent name="Element 6" />;
 ReactDOM.render(element6, getOrCreateDiv('element6'));
 
-/* Test push on vscode */
+function App() {
+  return (
+    <div>
+      <Welcome name="Sara" />
+      <WelcomeComponent name="Cahal" />
+    </div>
+  );
+}
+ReactDOM.render(<App />, getOrCreateDiv('element7'));
